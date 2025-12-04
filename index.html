@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Citra Masa Kini</title>
+    <style>
+        /* CSS untuk styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #e91e63;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-image: url('https://via.placeholder.com/1200x400?text=Salon+Hero+Image'); /* Ganti dengan URL gambar salon Anda */
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .service {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            width: 250px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .service:hover {
+            transform: scale(1.05);
+        }
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        .star {
+            color: gold;
+            font-size: 1.5rem;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 8px;
+        }
+        button {
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #c2185b;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            max-width: 400px;
+            margin: auto;
+        }
+        input, select, textarea {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        /* Responsivitas */
+        @media (max-width: 768px) {
+            .gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+            .service {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Salon Citra Masa Kini</h1>
+        <nav>
+            <a href="#about">Tentang</a> |
+            <a href="#services">Layanan</a> |
+            <a href="#map">Lokasi</a> |
+            <a href="#reviews">Ulasan</a> |
+            <a href="#booking">Booking</a>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h2>Rasakan Tampilan Terbaik di Salon Kami!</h2>
+    </section>
+    
+    <section id="about">
+        <h2>Penjelasan Usaha</h2>
+        <p>Salon kami menyediakan layanan potong rambut, perawatan wajah, dan spa dengan bahan alami. Kami berkomitmen untuk memberikan pengalaman relaksasi dan hasil maksimal. Jam operasional: 09:00 - 21:00.</p>
+    </section>
+    
+    <section id="services">
+        <h2>Hasil Usaha (Portofolio Layanan)</h2>
+        <div class="gallery">
+            <div class="service">
+                <img src="https://via.placeholder.com/250x200?text=Potong+Rambut" alt="Potong Rambut" width="100%" style="border-radius: 8px;">
+                <h3>Potong Rambut Modern</h3>
+                <p>Harga mulai Rp 50.000. Lihat hasil sebelum dan sesudah!</p>
+                <button onclick="scrollToBooking()">Booking Sekarang</button>
+            </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/250x200?text=Perawatan+Wajah" alt="Perawatan Wajah" width="100%" style="border-radius: 8px;">
+                <h3>Perawatan Wajah</h3>
+                <p>Harga mulai Rp 100.000. Kulit glowing dalam 1 jam!</p>
+                <button onclick="scrollToBooking()">Booking Sekarang</button>
+            </div>
+            <!-- Tambahkan layanan lainnya di sini -->
+        </div>
+    </section>
+    
+    <section id="map">
+        <h2>Maps Lokasi Salon</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d144.9537353153168!3d-37.816279742021665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d4a32f7b2b0!2sMelbourne%20CBD!5e0!3m2!1sen!2sau!4v1633074321234!5m2!1sen!2sau" allowfullscreen="" loading="lazy"></iframe>
+        <p>Ganti URL embed dengan lokasi salon Anda dari Google Maps.</p>
+    </section>
+    
+    <section id="reviews">
+        <h2>Rating Usaha</h2>
+        <div class="rating">
+            <span class="star">★★★★☆</span> (4.5/5 dari 200 ulasan)
+        </div>
+        <p>Testimoni: "Hasil potong rambut sangat bagus dan staf ramah!" - Pelanggan B</p>
+        <form id="reviewForm">
+            <label>Nama:</label>
+            <input type="text" id="reviewName" required>
+            <label>Rating:</label>
+            <select id="reviewRating" required>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+            </select>
+            <label>Komentar:</label>
+            <textarea id="reviewComment" required></textarea>
+            <button type="submit">Kirim Ulasan</button>
+        </form>
+    </section>
+    
+    <section id="booking">
+        <h2>Booking Online</h2>
+        <p>Isi form untuk reservasi:</p>
+        <form id="bookingForm">
+            <label>Nama:</label>
+            <input type="text" id="bookingName" required>
+            <label>Layanan:</label>
+            <select id="bookingService" required>
+                <option>Potong Rambut</option>
+                <option>Perawatan Wajah</option>
+            </select>
+            <label>Tanggal:</label>
+            <input type="date" id="bookingDate" required>
+            <button type="submit">Kirim Booking</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>Kontak: salon@email.com | WhatsApp: 08123456789 | Ikuti kami di Instagram</p>
+    </footer>
+    
+    <script>
+        // JavaScript untuk interaktivitas
+        // Fungsi untuk scroll ke bagian booking
+        function scrollToBooking() {
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Validasi dan submit form ulasan
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('reviewName').value;
+            const rating = document.getElementById('reviewRating').value;
+            const comment = document.getElementById('reviewComment').value;
+            alert(`Terima kasih ${name}! Ulasan Anda (${rating} bintang): "${comment}" telah dikirim.`);
+            // Di sini bisa tambahkan logika untuk simpan ke database atau API
+            this.reset();
+        });
+        
+        // Validasi dan submit form booking
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('bookingName').value;
+            const service = document.getElementById('bookingService').value;
+            const date = document.getElementById('bookingDate').value;
+            alert(`Booking berhasil untuk ${name} pada ${date} untuk layanan ${service}. Kami akan konfirmasi via email/WhatsApp.`);
+            // Di sini bisa tambahkan logika untuk kirim email atau integrasi kalender
+            this.reset();
+        });
+        
+        // Efek sederhana: animasi fade-in pada scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                } else {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(20px)';
+                }
+            });
+        });
+        
+        // Inisialisasi opacity untuk animasi
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s, transform 0.5s';
+        });
+    </script>
+</body>
+</html>
